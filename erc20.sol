@@ -65,8 +65,8 @@ contract QKCToken is ERC20Interface, SafeMath {
         name = "QuikNode Coin";
         decimals = 2;
         _totalSupply = 100000;
-        balances[0x402Aa1c8eeb9f0211e37e1D6E3b5bfad66Ba2A45] = _totalSupply;
-        emit Transfer(address(0), 0x402Aa1c8eeb9f0211e37e1D6E3b5bfad66Ba2A45, _totalSupply);
+        balances[msg.sender] = _totalSupply;
+        emit Transfer(address(0), msg.sender, _totalSupply);
     }
  
     function totalSupply() public override view returns (uint) {
